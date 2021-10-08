@@ -1,147 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Générateur de bulletin qualité</title>
-    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORT-GENERATOR</title>
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="render.js"></script>
-  </head>
-  <body style="width: 100%; margin: auto;">
-    <div class="text-center">
-      <h1>Bulletin qualité <i class="fas fa-award" style="color: sienna;"></i></h1>  
-    </div>
-    <a class="link-dark" href="login.html">Login</a>
-    <div class="row">
-      <div class="card text-center border-warning  mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="https://z-p3-scontent.fdla2-1.fna.fbcdn.net/v/t1.6435-9/134640095_2743235225927533_6169822766563535912_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=973b4a&_nc_ohc=isazgIY2idIAX-KnRBx&_nc_ht=z-p3-scontent.fdla2-1.fna&oh=6ad732028e52be5d89ac6ec26ea1c29c&oe=617A3B75" class="img-fluid rounded-start" alt="logo_bicec">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h2 class="card-text">BICEC</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <form action="" method="post" id="bicec_form"></form>
-    <table class="table border-warning table-bordered" id="bicec_tab">
-      <thead>
-        <tr class="text-center">
-          <th  colspan="3">BULLETIN QUALITE de la PRODUCTION INFORMATIQUE BICEC en DCO du 29/09/2021</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr class="text-center">
-          <th scope="col">CATEGORIES</th>
-          <th scope="col">Heure et/ou Etat</th>
-          <th scope="col">Norme clientèle</th>
-        </tr>
-
-        <tr>
-          <th scope="col">Travaux du TFJO</th>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td>
-            <label class="form-label" id="label-debut-sauve-tfj" for="debut-sauve-tfj" form="bicec_form">Début sauvegarde avant TFJ</label>
-          </td>
-          <td class="text-center">
-            <input id="debut-sauve-tfj" type="time" form="bicec_form">
-          </td>
-          <td class="text-center"></td>
-        </tr>
-
-        <tr>
-          <td><label class="col-form-label" id="label-debut-tfj" for="debut-tfj">Début TFJ</label></td>
-          <td class="text-center"><input id="debut-tfj" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-fin-tfj" for="fin-tfj">Fin TFJ</label></td>
-          <td class="text-center"><input id="fin-tfj" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-duree-tfj" for="duree-tfj">Durée TFJ</label></td>
-          <td class="text-center"><input id="duree-tfj" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-fin-sauve-tfj" for="fin-sauve-tfj">Fin sauvegarde après TFJ</label></td>
-          <td class="text-center"><input id="fin-sauve-tfj" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-ouverture" for="ouverture-site">Ouverture du site et portail</label></td>
-          <td class="text-center"><input id="ouverture-site" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-infocentre" for="infocentre">Disponibilité Infocentre</label></td>
-          <td class="text-center"><input id="infocentre" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-transfert-sda" for="transfert-sda">Transfert des fichiers aux agences (SDA, états TFJO)</label></td>
-          <td class="text-center"><input id="transfert-sda" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-      
-        <tr>
-          <td><label class="col-form-label" id="label-control-amplitude" for="control-amplitude">Contrôle disponibilité AMPLITUDE</label></td>
-          <td class="text-center"><input id="control-amplitude" type="time"></td>
-          <td class="text-center"></td>
-        </tr>
-        
-        <tr>
-          <th scope="col">Monétique</th>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <th scope="col">Services à valeur ajouté</th>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <th scope="col">Disponibilité du SI</th>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td colspan="3">Amplitude</td>
-        </tr>
-
-        <tr>
-          <th scope="col">Volumétrie</th>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button id="generateur" class="btn btn-warning" type="submit">Générer !</button>
-    </div>
-  </body>
-</html>
-
 </head>
+<body class="m-auto" style="height: 50rem;">
+  <div class="m-auto d-flex justify-content-center flex-column align-items-center w-100">
+    <h1 class="text-center">Login <i class="fas fa-sign-in-alt"></i></h1>
+    <form class="m-auto d-flex justify-content-center flex-column" action="home.html">
+        <div class="row">
+            <label class="form-label text-center" for="matricule">Matricule</label>
+            <input class="text-center" type="text" id="matricule">
+        </div>
+        <div class="row">
+            <label class="form-label text-center" for="password">Mot de passe</label>
+            <input class="text-center" type="password" id="password">
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto m-auto p-2">
+            <button class="btn btn-warning text-center" type="submit">Se connecter</button>
+        </div>
+    </form>
+  </div>
+</body>
+</html>

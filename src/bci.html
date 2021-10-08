@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>REPORT-GENERATOR</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="js/render.js"></script>
+  </head>
+  <body class="m-auto">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+      <a class="navbar-brand" href="home.html">
+        <img src="./images/miniature-logo-2.png" width="30" height="30" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Banques
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">BICEC</a>
+              <a class="dropdown-item" href="#">BCI</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+        <a class="link-dark"style="color: sienna;" href="index.html"><i class="fas fa-sign-in-alt m-auto" style="color: sienna;  
+          font-size: 1.5rem;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;"></i></a>
+    </nav>
+    <div class="row">
+      <div class="card text-center border-warning  mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./images/logo_bci.png" class="img-fluid rounded-start" alt="logo_bci">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-text">BCI</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form action="" method="post" id="bci_form"></form>
+    <table class="table border-warning table-bordered" id="bci_tab">
+      <thead>
+        <tr class="text-center">
+          <tr class="text-center">
+            <th scope="col">CATEGORIES</th>
+            <th scope="col">Heure et/ou Etat</th>
+            <th scope="col">Norme clientèle</th>
+          </tr>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Travaux du TFJO</th>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <label class="form-label" id="label-debut-sauve-tfj" for="debut-sauve-tfj" form="bci_form">Début sauvegarde avant TFJ</label>
+          </td>
+          <td class="text-center">
+            <input id="debut-sauve-tfj" type="time" form="bci_form">
+          </td>
+          <td class="text-center"></td>
+        </tr>
+
+        <tr>
+          <td><label class="col-form-label" id="label-debut-tfj" for="debut-tfj">Début TFJ</label></td>
+          <td class="text-center"><input id="debut-tfj" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-fin-tfj" for="fin-tfj">Fin TFJ</label></td>
+          <td class="text-center"><input id="fin-tfj" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-duree-tfj" for="duree-tfj">Durée TFJ</label></td>
+          <td class="text-center"><input id="duree-tfj" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-fin-sauve-tfj" for="fin-sauve-tfj">Fin sauvegarde après TFJ</label></td>
+          <td class="text-center"><input id="fin-sauve-tfj" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-ouverture" for="ouverture-site">Ouverture du site et portail</label></td>
+          <td class="text-center"><input id="ouverture-site" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-infocentre" for="infocentre">Disponibilité Infocentre</label></td>
+          <td class="text-center"><input id="infocentre" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-transfert-sda" for="transfert-sda">Transfert des fichiers aux agences (SDA, états TFJO)</label></td>
+          <td class="text-center"><input id="transfert-sda" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+      
+        <tr>
+          <td><label class="col-form-label" id="label-control-amplitude" for="control-amplitude">Contrôle disponibilité AMPLITUDE</label></td>
+          <td class="text-center"><input id="control-amplitude" type="time"></td>
+          <td class="text-center"></td>
+        </tr>
+        
+        <tr>
+          <th scope="col">Monétique</th>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="col">Services à valeur ajouté</th>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th scope="col">Disponibilité du SI</th>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td colspan="3">Amplitude</td>
+        </tr>
+
+        <tr>
+          <th scope="col">Volumétrie</th>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button id="generateur" class="btn btn-warning" type="submit">Générer !</button>
+    </div>
+  </body>
+</html>
+
+</head>
